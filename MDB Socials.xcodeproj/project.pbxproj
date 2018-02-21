@@ -1,0 +1,574 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7637A20B203DA32000F83555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A20A203DA32000F83555 /* AppDelegate.swift */; };
+		7637A20D203DA32000F83555 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A20C203DA32000F83555 /* ViewController.swift */; };
+		7637A210203DA32000F83555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7637A20E203DA32000F83555 /* Main.storyboard */; };
+		7637A213203DA32000F83555 /* MDB_Socials.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7637A211203DA32000F83555 /* MDB_Socials.xcdatamodeld */; };
+		7637A215203DA32000F83555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7637A214203DA32000F83555 /* Assets.xcassets */; };
+		7637A218203DA32000F83555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7637A216203DA32000F83555 /* LaunchScreen.storyboard */; };
+		7637A223203DA32100F83555 /* MDB_SocialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A222203DA32100F83555 /* MDB_SocialsTests.swift */; };
+		7637A22E203DA32100F83555 /* MDB_SocialsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A22D203DA32100F83555 /* MDB_SocialsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7637A21F203DA32000F83555 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7637A1FF203DA31F00F83555 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7637A206203DA32000F83555;
+			remoteInfo = "MDB Socials";
+		};
+		7637A22A203DA32100F83555 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7637A1FF203DA31F00F83555 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7637A206203DA32000F83555;
+			remoteInfo = "MDB Socials";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7637A207203DA32000F83555 /* MDB Socials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDB Socials.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7637A20A203DA32000F83555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7637A20C203DA32000F83555 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7637A20F203DA32000F83555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7637A212203DA32000F83555 /* MDB_Socials.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MDB_Socials.xcdatamodel; sourceTree = "<group>"; };
+		7637A214203DA32000F83555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7637A217203DA32000F83555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7637A219203DA32000F83555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7637A21E203DA32000F83555 /* MDB SocialsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MDB SocialsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7637A222203DA32100F83555 /* MDB_SocialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDB_SocialsTests.swift; sourceTree = "<group>"; };
+		7637A224203DA32100F83555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7637A229203DA32100F83555 /* MDB SocialsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MDB SocialsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7637A22D203DA32100F83555 /* MDB_SocialsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDB_SocialsUITests.swift; sourceTree = "<group>"; };
+		7637A22F203DA32100F83555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7637A204203DA32000F83555 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7637A21B203DA32000F83555 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7637A226203DA32100F83555 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7637A1FE203DA31F00F83555 = {
+			isa = PBXGroup;
+			children = (
+				7637A209203DA32000F83555 /* MDB Socials */,
+				7637A221203DA32100F83555 /* MDB SocialsTests */,
+				7637A22C203DA32100F83555 /* MDB SocialsUITests */,
+				7637A208203DA32000F83555 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7637A208203DA32000F83555 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7637A207203DA32000F83555 /* MDB Socials.app */,
+				7637A21E203DA32000F83555 /* MDB SocialsTests.xctest */,
+				7637A229203DA32100F83555 /* MDB SocialsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7637A209203DA32000F83555 /* MDB Socials */ = {
+			isa = PBXGroup;
+			children = (
+				7637A20A203DA32000F83555 /* AppDelegate.swift */,
+				7637A20C203DA32000F83555 /* ViewController.swift */,
+				7637A20E203DA32000F83555 /* Main.storyboard */,
+				7637A214203DA32000F83555 /* Assets.xcassets */,
+				7637A216203DA32000F83555 /* LaunchScreen.storyboard */,
+				7637A219203DA32000F83555 /* Info.plist */,
+				7637A211203DA32000F83555 /* MDB_Socials.xcdatamodeld */,
+			);
+			path = "MDB Socials";
+			sourceTree = "<group>";
+		};
+		7637A221203DA32100F83555 /* MDB SocialsTests */ = {
+			isa = PBXGroup;
+			children = (
+				7637A222203DA32100F83555 /* MDB_SocialsTests.swift */,
+				7637A224203DA32100F83555 /* Info.plist */,
+			);
+			path = "MDB SocialsTests";
+			sourceTree = "<group>";
+		};
+		7637A22C203DA32100F83555 /* MDB SocialsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7637A22D203DA32100F83555 /* MDB_SocialsUITests.swift */,
+				7637A22F203DA32100F83555 /* Info.plist */,
+			);
+			path = "MDB SocialsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7637A206203DA32000F83555 /* MDB Socials */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7637A232203DA32100F83555 /* Build configuration list for PBXNativeTarget "MDB Socials" */;
+			buildPhases = (
+				7637A203203DA32000F83555 /* Sources */,
+				7637A204203DA32000F83555 /* Frameworks */,
+				7637A205203DA32000F83555 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MDB Socials";
+			productName = "MDB Socials";
+			productReference = 7637A207203DA32000F83555 /* MDB Socials.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7637A21D203DA32000F83555 /* MDB SocialsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7637A235203DA32100F83555 /* Build configuration list for PBXNativeTarget "MDB SocialsTests" */;
+			buildPhases = (
+				7637A21A203DA32000F83555 /* Sources */,
+				7637A21B203DA32000F83555 /* Frameworks */,
+				7637A21C203DA32000F83555 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7637A220203DA32000F83555 /* PBXTargetDependency */,
+			);
+			name = "MDB SocialsTests";
+			productName = "MDB SocialsTests";
+			productReference = 7637A21E203DA32000F83555 /* MDB SocialsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7637A228203DA32100F83555 /* MDB SocialsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7637A238203DA32100F83555 /* Build configuration list for PBXNativeTarget "MDB SocialsUITests" */;
+			buildPhases = (
+				7637A225203DA32100F83555 /* Sources */,
+				7637A226203DA32100F83555 /* Frameworks */,
+				7637A227203DA32100F83555 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7637A22B203DA32100F83555 /* PBXTargetDependency */,
+			);
+			name = "MDB SocialsUITests";
+			productName = "MDB SocialsUITests";
+			productReference = 7637A229203DA32100F83555 /* MDB SocialsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7637A1FF203DA31F00F83555 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = MHK;
+				TargetAttributes = {
+					7637A206203DA32000F83555 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					7637A21D203DA32000F83555 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7637A206203DA32000F83555;
+					};
+					7637A228203DA32100F83555 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7637A206203DA32000F83555;
+					};
+				};
+			};
+			buildConfigurationList = 7637A202203DA32000F83555 /* Build configuration list for PBXProject "MDB Socials" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7637A1FE203DA31F00F83555;
+			productRefGroup = 7637A208203DA32000F83555 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7637A206203DA32000F83555 /* MDB Socials */,
+				7637A21D203DA32000F83555 /* MDB SocialsTests */,
+				7637A228203DA32100F83555 /* MDB SocialsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7637A205203DA32000F83555 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7637A218203DA32000F83555 /* LaunchScreen.storyboard in Resources */,
+				7637A215203DA32000F83555 /* Assets.xcassets in Resources */,
+				7637A210203DA32000F83555 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7637A21C203DA32000F83555 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7637A227203DA32100F83555 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7637A203203DA32000F83555 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7637A213203DA32000F83555 /* MDB_Socials.xcdatamodeld in Sources */,
+				7637A20D203DA32000F83555 /* ViewController.swift in Sources */,
+				7637A20B203DA32000F83555 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7637A21A203DA32000F83555 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7637A223203DA32100F83555 /* MDB_SocialsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7637A225203DA32100F83555 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7637A22E203DA32100F83555 /* MDB_SocialsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7637A220203DA32000F83555 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7637A206203DA32000F83555 /* MDB Socials */;
+			targetProxy = 7637A21F203DA32000F83555 /* PBXContainerItemProxy */;
+		};
+		7637A22B203DA32100F83555 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7637A206203DA32000F83555 /* MDB Socials */;
+			targetProxy = 7637A22A203DA32100F83555 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7637A20E203DA32000F83555 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7637A20F203DA32000F83555 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7637A216203DA32000F83555 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7637A217203DA32000F83555 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7637A230203DA32100F83555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7637A231203DA32100F83555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7637A233203DA32100F83555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "MDB Socials/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MHK.MDB-Socials";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7637A234203DA32100F83555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "MDB Socials/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MHK.MDB-Socials";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7637A236203DA32100F83555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "MDB SocialsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MHK.MDB-SocialsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MDB Socials.app/MDB Socials";
+			};
+			name = Debug;
+		};
+		7637A237203DA32100F83555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "MDB SocialsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MHK.MDB-SocialsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MDB Socials.app/MDB Socials";
+			};
+			name = Release;
+		};
+		7637A239203DA32100F83555 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "MDB SocialsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MHK.MDB-SocialsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "MDB Socials";
+			};
+			name = Debug;
+		};
+		7637A23A203DA32100F83555 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "MDB SocialsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "MHK.MDB-SocialsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "MDB Socials";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7637A202203DA32000F83555 /* Build configuration list for PBXProject "MDB Socials" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7637A230203DA32100F83555 /* Debug */,
+				7637A231203DA32100F83555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7637A232203DA32100F83555 /* Build configuration list for PBXNativeTarget "MDB Socials" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7637A233203DA32100F83555 /* Debug */,
+				7637A234203DA32100F83555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7637A235203DA32100F83555 /* Build configuration list for PBXNativeTarget "MDB SocialsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7637A236203DA32100F83555 /* Debug */,
+				7637A237203DA32100F83555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7637A238203DA32100F83555 /* Build configuration list for PBXNativeTarget "MDB SocialsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7637A239203DA32100F83555 /* Debug */,
+				7637A23A203DA32100F83555 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7637A211203DA32000F83555 /* MDB_Socials.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7637A212203DA32000F83555 /* MDB_Socials.xcdatamodel */,
+			);
+			currentVersion = 7637A212203DA32000F83555 /* MDB_Socials.xcdatamodel */;
+			path = MDB_Socials.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7637A1FF203DA31F00F83555 /* Project object */;
+}
