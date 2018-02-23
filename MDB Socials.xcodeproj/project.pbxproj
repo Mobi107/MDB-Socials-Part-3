@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5338CB5FC36CFDE972B20CD1 /* Pods_MDB_Socials.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABD916910DF12D5F67DFC78 /* Pods_MDB_Socials.framework */; };
+		761BC909203ECCE4005A6A1B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BC908203ECCE4005A6A1B /* SignUpViewController.swift */; };
+		761BC90B203ECD19005A6A1B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BC90A203ECD19005A6A1B /* FeedViewController.swift */; };
+		761BC90E203ED1FC005A6A1B /* UserAuthHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BC90D203ED1FC005A6A1B /* UserAuthHelper.swift */; };
+		761BC911203ED794005A6A1B /* FirebaseAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BC910203ED794005A6A1B /* FirebaseAPIClient.swift */; };
+		761BC913203ED955005A6A1B /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BC912203ED955005A6A1B /* Users.swift */; };
+		761BC915203ED967005A6A1B /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761BC914203ED967005A6A1B /* Event.swift */; };
 		7637A20B203DA32000F83555 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A20A203DA32000F83555 /* AppDelegate.swift */; };
-		7637A20D203DA32000F83555 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A20C203DA32000F83555 /* ViewController.swift */; };
+		7637A20D203DA32000F83555 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A20C203DA32000F83555 /* LoginViewController.swift */; };
 		7637A210203DA32000F83555 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7637A20E203DA32000F83555 /* Main.storyboard */; };
 		7637A213203DA32000F83555 /* MDB_Socials.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7637A211203DA32000F83555 /* MDB_Socials.xcdatamodeld */; };
 		7637A215203DA32000F83555 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7637A214203DA32000F83555 /* Assets.xcassets */; };
 		7637A218203DA32000F83555 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7637A216203DA32000F83555 /* LaunchScreen.storyboard */; };
 		7637A223203DA32100F83555 /* MDB_SocialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A222203DA32100F83555 /* MDB_SocialsTests.swift */; };
 		7637A22E203DA32100F83555 /* MDB_SocialsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A22D203DA32100F83555 /* MDB_SocialsUITests.swift */; };
+		7637A23C203DA3CE00F83555 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7637A23B203DA3CE00F83555 /* GoogleService-Info.plist */; };
+		76980DB0203FC10100451C3C /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76980DAF203FC10100451C3C /* FeedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		761BC908203ECCE4005A6A1B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		761BC90A203ECD19005A6A1B /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		761BC90D203ED1FC005A6A1B /* UserAuthHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuthHelper.swift; sourceTree = "<group>"; };
+		761BC910203ED794005A6A1B /* FirebaseAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAPIClient.swift; sourceTree = "<group>"; };
+		761BC912203ED955005A6A1B /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		761BC914203ED967005A6A1B /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		7637A207203DA32000F83555 /* MDB Socials.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDB Socials.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7637A20A203DA32000F83555 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7637A20C203DA32000F83555 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7637A20C203DA32000F83555 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7637A20F203DA32000F83555 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7637A212203DA32000F83555 /* MDB_Socials.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MDB_Socials.xcdatamodel; sourceTree = "<group>"; };
 		7637A214203DA32000F83555 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +64,11 @@
 		7637A229203DA32100F83555 /* MDB SocialsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MDB SocialsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7637A22D203DA32100F83555 /* MDB_SocialsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDB_SocialsUITests.swift; sourceTree = "<group>"; };
 		7637A22F203DA32100F83555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7637A23B203DA3CE00F83555 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		76980DAF203FC10100451C3C /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		904EC9637FBF50E3342C344E /* Pods-MDB Socials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB Socials.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDB Socials/Pods-MDB Socials.release.xcconfig"; sourceTree = "<group>"; };
+		9ABD916910DF12D5F67DFC78 /* Pods_MDB_Socials.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDB_Socials.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E7839A3F01B113BCE8E2139E /* Pods-MDB Socials.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB Socials.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDB Socials/Pods-MDB Socials.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5338CB5FC36CFDE972B20CD1 /* Pods_MDB_Socials.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,13 +97,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6186C7BF029D9AB49136622D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9ABD916910DF12D5F67DFC78 /* Pods_MDB_Socials.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		761BC903203EBBD5005A6A1B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				761BC907203EBC2C005A6A1B /* LoginViewController */,
+				761BC906203EBC1D005A6A1B /* SignUpViewController */,
+				761BC905203EBBF5005A6A1B /* FeedViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		761BC904203EBBE1005A6A1B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				761BC912203ED955005A6A1B /* Users.swift */,
+				761BC914203ED967005A6A1B /* Event.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		761BC905203EBBF5005A6A1B /* FeedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				76980DAE203FC0D800451C3C /* Cells */,
+				761BC90A203ECD19005A6A1B /* FeedViewController.swift */,
+			);
+			path = FeedViewController;
+			sourceTree = "<group>";
+		};
+		761BC906203EBC1D005A6A1B /* SignUpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				761BC908203ECCE4005A6A1B /* SignUpViewController.swift */,
+			);
+			path = SignUpViewController;
+			sourceTree = "<group>";
+		};
+		761BC907203EBC2C005A6A1B /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7637A20C203DA32000F83555 /* LoginViewController.swift */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		761BC90C203ED194005A6A1B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				761BC90D203ED1FC005A6A1B /* UserAuthHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		761BC90F203ED778005A6A1B /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				761BC910203ED794005A6A1B /* FirebaseAPIClient.swift */,
+			);
+			path = Clients;
+			sourceTree = "<group>";
+		};
 		7637A1FE203DA31F00F83555 = {
 			isa = PBXGroup;
 			children = (
+				761BC90F203ED778005A6A1B /* Clients */,
+				761BC90C203ED194005A6A1B /* Helpers */,
+				761BC904203EBBE1005A6A1B /* Models */,
+				761BC903203EBBD5005A6A1B /* ViewControllers */,
 				7637A209203DA32000F83555 /* MDB Socials */,
 				7637A221203DA32100F83555 /* MDB SocialsTests */,
 				7637A22C203DA32100F83555 /* MDB SocialsUITests */,
 				7637A208203DA32000F83555 /* Products */,
+				D8221399C56ABC1CA11932BB /* Pods */,
+				6186C7BF029D9AB49136622D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				7637A20A203DA32000F83555 /* AppDelegate.swift */,
-				7637A20C203DA32000F83555 /* ViewController.swift */,
+				7637A23B203DA3CE00F83555 /* GoogleService-Info.plist */,
 				7637A20E203DA32000F83555 /* Main.storyboard */,
 				7637A214203DA32000F83555 /* Assets.xcassets */,
 				7637A216203DA32000F83555 /* LaunchScreen.storyboard */,
@@ -128,6 +223,23 @@
 			path = "MDB SocialsUITests";
 			sourceTree = "<group>";
 		};
+		76980DAE203FC0D800451C3C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				76980DAF203FC10100451C3C /* FeedTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D8221399C56ABC1CA11932BB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E7839A3F01B113BCE8E2139E /* Pods-MDB Socials.debug.xcconfig */,
+				904EC9637FBF50E3342C344E /* Pods-MDB Socials.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +247,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7637A232203DA32100F83555 /* Build configuration list for PBXNativeTarget "MDB Socials" */;
 			buildPhases = (
+				87AF1F7C785BA7BD47DF0524 /* [CP] Check Pods Manifest.lock */,
 				7637A203203DA32000F83555 /* Sources */,
 				7637A204203DA32000F83555 /* Frameworks */,
 				7637A205203DA32000F83555 /* Resources */,
+				4DD4DECDAE45B18BF075CC98 /* [CP] Embed Pods Frameworks */,
+				97E56AE4F46873EBE9FE2AA1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -236,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7637A218203DA32000F83555 /* LaunchScreen.storyboard in Resources */,
+				7637A23C203DA3CE00F83555 /* GoogleService-Info.plist in Resources */,
 				7637A215203DA32000F83555 /* Assets.xcassets in Resources */,
 				7637A210203DA32000F83555 /* Main.storyboard in Resources */,
 			);
@@ -257,14 +373,81 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4DD4DECDAE45B18BF075CC98 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MDB Socials/Pods-MDB Socials-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDB Socials/Pods-MDB Socials-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87AF1F7C785BA7BD47DF0524 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MDB Socials-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97E56AE4F46873EBE9FE2AA1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MDB Socials/Pods-MDB Socials-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7637A203203DA32000F83555 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7637A213203DA32000F83555 /* MDB_Socials.xcdatamodeld in Sources */,
-				7637A20D203DA32000F83555 /* ViewController.swift in Sources */,
+				7637A20D203DA32000F83555 /* LoginViewController.swift in Sources */,
+				761BC90B203ECD19005A6A1B /* FeedViewController.swift in Sources */,
+				761BC909203ECCE4005A6A1B /* SignUpViewController.swift in Sources */,
+				761BC90E203ED1FC005A6A1B /* UserAuthHelper.swift in Sources */,
+				761BC911203ED794005A6A1B /* FirebaseAPIClient.swift in Sources */,
+				761BC915203ED967005A6A1B /* Event.swift in Sources */,
 				7637A20B203DA32000F83555 /* AppDelegate.swift in Sources */,
+				761BC913203ED955005A6A1B /* Users.swift in Sources */,
+				76980DB0203FC10100451C3C /* FeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,9 +611,11 @@
 		};
 		7637A233203DA32100F83555 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7839A3F01B113BCE8E2139E /* Pods-MDB Socials.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WVW6JWR7H7;
 				INFOPLIST_FILE = "MDB Socials/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MHK.MDB-Socials";
@@ -442,9 +627,11 @@
 		};
 		7637A234203DA32100F83555 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904EC9637FBF50E3342C344E /* Pods-MDB Socials.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WVW6JWR7H7;
 				INFOPLIST_FILE = "MDB Socials/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "MHK.MDB-Socials";
