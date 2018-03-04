@@ -26,6 +26,8 @@
 		765E2521204B6AE500593ADE /* PhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765E2520204B6AE500593ADE /* PhotoHandler.swift */; };
 		765E2524204B9FA800593ADE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765E2523204B9FA800593ADE /* DetailViewController.swift */; };
 		765E2527204BAEBE00593ADE /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765E2526204BAEBE00593ADE /* NewEventViewController.swift */; };
+		765E252A204BDBA800593ADE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765E2529204BDBA800593ADE /* Constants.swift */; };
+		765E252C204BDC2100593ADE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765E252B204BDC2100593ADE /* Utils.swift */; };
 		76980DB0203FC10100451C3C /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76980DAF203FC10100451C3C /* FeedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		765E2520204B6AE500593ADE /* PhotoHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHandler.swift; sourceTree = "<group>"; };
 		765E2523204B9FA800593ADE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		765E2526204BAEBE00593ADE /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		765E2529204BDBA800593ADE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		765E252B204BDC2100593ADE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		76980DAF203FC10100451C3C /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		904EC9637FBF50E3342C344E /* Pods-MDB Socials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB Socials.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDB Socials/Pods-MDB Socials.release.xcconfig"; sourceTree = "<group>"; };
 		9ABD916910DF12D5F67DFC78 /* Pods_MDB_Socials.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDB_Socials.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +181,7 @@
 		7637A1FE203DA31F00F83555 = {
 			isa = PBXGroup;
 			children = (
+				765E2528204BDB8000593ADE /* Lib */,
 				761BC90F203ED778005A6A1B /* Clients */,
 				761BC90C203ED194005A6A1B /* Helpers */,
 				761BC904203EBBE1005A6A1B /* Models */,
@@ -246,6 +251,15 @@
 				765E2526204BAEBE00593ADE /* NewEventViewController.swift */,
 			);
 			path = NewEventViewController;
+			sourceTree = "<group>";
+		};
+		765E2528204BDB8000593ADE /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				765E2529204BDBA800593ADE /* Constants.swift */,
+				765E252B204BDC2100593ADE /* Utils.swift */,
+			);
+			path = Lib;
 			sourceTree = "<group>";
 		};
 		76980DAE203FC0D800451C3C /* Cells */ = {
@@ -480,12 +494,14 @@
 				761BC90B203ECD19005A6A1B /* FeedViewController.swift in Sources */,
 				765E2524204B9FA800593ADE /* DetailViewController.swift in Sources */,
 				761BC909203ECCE4005A6A1B /* SignUpViewController.swift in Sources */,
+				765E252C204BDC2100593ADE /* Utils.swift in Sources */,
 				761BC90E203ED1FC005A6A1B /* UserAuthHelper.swift in Sources */,
 				761BC911203ED794005A6A1B /* FirebaseAPIClient.swift in Sources */,
 				761BC915203ED967005A6A1B /* Event.swift in Sources */,
 				765E2521204B6AE500593ADE /* PhotoHandler.swift in Sources */,
 				7637A20B203DA32000F83555 /* AppDelegate.swift in Sources */,
 				765E2527204BAEBE00593ADE /* NewEventViewController.swift in Sources */,
+				765E252A204BDBA800593ADE /* Constants.swift in Sources */,
 				761BC913203ED955005A6A1B /* Users.swift in Sources */,
 				76980DB0203FC10100451C3C /* FeedTableViewCell.swift in Sources */,
 			);
