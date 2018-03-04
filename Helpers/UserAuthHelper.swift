@@ -31,10 +31,16 @@ class UserAuthHelper {
         }
     }
     
-    static func createUser(email: String, password: String, withBlock: @escaping (String) -> ()) {
+    static func createUser(email: String, password: String, imageData: Data, withBlock: @escaping (String, String) -> ()) {
         Auth.auth().createUser(withEmail: email, password: password, completion: { (user: User?, error) in
             if error == nil {
-                withBlock((user?.uid)!)
+                let storage = Storage.storage().reference().child("profilepics/\((user?.uid)!)")
+                let metadata = StorageMetadata()
+                metadata.contentType = "image/jpeg"
+                storage.putData(imageData, metadata: metadata).observe(.success) { (snapshot) in
+                    let url = snapshot.metadata?.downloadURL()?.absoluteString
+                    withBlock(url!, (user?.uid)!)
+                }
             }
             else {
                 print(error.debugDescription)

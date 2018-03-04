@@ -57,18 +57,18 @@
                         <viewLayoutGuide key="safeArea" id="Lfd-Ig-rLh"/>
                     </view>
                     <connections>
-                        <segue destination="VnX-de-Qwu" kind="show" id="tc9-S9-LDh"/>
-                        <segue destination="2aG-7A-Aeh" kind="show" id="5sv-Il-CWd"/>
+                        <segue destination="VnX-de-Qwu" kind="show" identifier="toNewEventFromFeed" id="tc9-S9-LDh"/>
+                        <segue destination="2aG-7A-Aeh" kind="show" identifier="toDetailFromFeed" id="5sv-Il-CWd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fbJ-6L-pbk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1310" y="140"/>
         </scene>
-        <!--View Controller-->
+        <!--New Event View Controller-->
         <scene sceneID="Gbn-1x-Ouz">
             <objects>
-                <viewController id="VnX-de-Qwu" sceneMemberID="viewController">
+                <viewController id="VnX-de-Qwu" customClass="NewEventViewController" customModule="MDB_Socials" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="93J-42-wF8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="473" y="894"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Cu7-x2-zce">
             <objects>
-                <viewController id="2aG-7A-Aeh" sceneMemberID="viewController">
+                <viewController id="2aG-7A-Aeh" customClass="DetailViewController" customModule="MDB_Socials" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="O8z-Rq-aTP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -115,6 +115,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="axP-e9-HyK"/>
+        <segue reference="E42-d5-Mah"/>
     </inferredMetricsTieBreakers>
 </document>

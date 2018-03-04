@@ -8,12 +8,15 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class Users {
     var fullname: String?
     var email: String?
     var username: String?
+    var imageURL: String?
     var id: String?
+    var image: UIImage?
     
     init(id: String, userDict: [String:Any]?) {
         self.id = id
@@ -27,6 +30,9 @@ class Users {
             if let username = userDict!["username"] as? String {
                 self.username = username
             }
+            if let imageURL = userDict!["imageURL"] as? String {
+                self.imageURL = imageURL
+            }
         }
     }
     
@@ -36,5 +42,16 @@ class Users {
         })
     }
     
-    
+    func getProfilePic(withBlock: @escaping () -> ()) {
+        //TODO: Get User's profile picture
+        let ref = Storage.storage().reference().child("/profilepics/\(id!)")
+        ref.getData(maxSize: 1 * 2048 * 2048) { data, error in
+            if let error = error {
+                print(error)
+            } else {
+                self.image = UIImage(data: data!)
+                withBlock()
+            }
+        }
+    }
 }

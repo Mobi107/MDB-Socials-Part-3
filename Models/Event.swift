@@ -14,9 +14,9 @@ class Event {
     var title: String?
     var creatorId: String?
     var description: String?
-    var date: Date?
+    var date: String?
     var creator: String?
-    var imageData: Data?
+    var imageURL: String?
     var id: String?
     var image: UIImage?
     
@@ -36,8 +36,11 @@ class Event {
             if let description = postDict!["description"] as? String {
                 self.description = description
             }
-            if let date = postDict!["date"] as? Date {
+            if let date = postDict!["date"] as? String {
                 self.date = date
+            }
+            if let imageURL = postDict!["imageURL"] as? String {
+                self.imageURL = imageURL
             }
         }
     }

@@ -29,23 +29,28 @@ class FirebaseAPIClient {
         })
     }
     
-    static func createNewEvent(title: String, creator: String, creatorId: String, description: String, date: Date, imageData: Data) {
+    static func createNewEvent(imageData: Data, withBlock: @escaping (String, String) -> ()) {
         let postsRef = Database.database().reference().child("Events")
-        let newPost = ["title": title, "creator": creator, "creatorId": creatorId, "description": description, "date": date] as [String : Any]
         let key = postsRef.childByAutoId().key
         let storage = Storage.storage().reference().child("eventpics/\(key)")
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         storage.putData(imageData, metadata: metadata).observe(.success) { (snapshot) in
-            _ = snapshot.metadata?.downloadURL()?.absoluteString
+            let url = snapshot.metadata?.downloadURL()?.absoluteString
+            withBlock(url!, key)
         }
-        let childUpdates = ["/\(key)/": newPost]
+    }
+    
+    static func createEvent(id: String, title: String, creator: String, creatorId: String, description: String, date: String, imageURL: String) {
+        let postsRef = Database.database().reference().child("Events")
+        let newPost = ["title": title, "creator": creator, "creatorId": creatorId, "description": description, "date": date, "imageURL": imageURL] as [String : Any]
+        let childUpdates = ["/\(id)/": newPost]
         postsRef.updateChildValues(childUpdates)
     }
     
-    static func createNewUser(id: String, fullname: String, email: String, username: String) {
+    static func createNewUser(id: String, fullname: String, email: String, username: String, imageURL: String) {
         let usersRef = Database.database().reference().child("Users")
-        let newUser = ["fullname": fullname, "email": email, "username": username]
+        let newUser = ["fullname": fullname, "email": email, "username": username, "imageURL": imageURL]
         let childUpdates = ["/\(id)/": newUser]
         usersRef.updateChildValues(childUpdates)
     }

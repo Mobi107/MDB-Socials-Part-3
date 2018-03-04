@@ -23,6 +23,9 @@
 		7637A223203DA32100F83555 /* MDB_SocialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A222203DA32100F83555 /* MDB_SocialsTests.swift */; };
 		7637A22E203DA32100F83555 /* MDB_SocialsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7637A22D203DA32100F83555 /* MDB_SocialsUITests.swift */; };
 		7637A23C203DA3CE00F83555 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7637A23B203DA3CE00F83555 /* GoogleService-Info.plist */; };
+		765E2521204B6AE500593ADE /* PhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765E2520204B6AE500593ADE /* PhotoHandler.swift */; };
+		765E2524204B9FA800593ADE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765E2523204B9FA800593ADE /* DetailViewController.swift */; };
+		765E2527204BAEBE00593ADE /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765E2526204BAEBE00593ADE /* NewEventViewController.swift */; };
 		76980DB0203FC10100451C3C /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76980DAF203FC10100451C3C /* FeedTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		7637A22D203DA32100F83555 /* MDB_SocialsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDB_SocialsUITests.swift; sourceTree = "<group>"; };
 		7637A22F203DA32100F83555 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7637A23B203DA3CE00F83555 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		765E2520204B6AE500593ADE /* PhotoHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHandler.swift; sourceTree = "<group>"; };
+		765E2523204B9FA800593ADE /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		765E2526204BAEBE00593ADE /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		76980DAF203FC10100451C3C /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
 		904EC9637FBF50E3342C344E /* Pods-MDB Socials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB Socials.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDB Socials/Pods-MDB Socials.release.xcconfig"; sourceTree = "<group>"; };
 		9ABD916910DF12D5F67DFC78 /* Pods_MDB_Socials.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDB_Socials.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +114,8 @@
 		761BC903203EBBD5005A6A1B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				765E2525204BAE8F00593ADE /* NewEventViewController */,
+				765E2522204B9F8D00593ADE /* DetailViewController */,
 				761BC907203EBC2C005A6A1B /* LoginViewController */,
 				761BC906203EBC1D005A6A1B /* SignUpViewController */,
 				761BC905203EBBF5005A6A1B /* FeedViewController */,
@@ -153,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				761BC90D203ED1FC005A6A1B /* UserAuthHelper.swift */,
+				765E2520204B6AE500593ADE /* PhotoHandler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -221,6 +230,22 @@
 				7637A22F203DA32100F83555 /* Info.plist */,
 			);
 			path = "MDB SocialsUITests";
+			sourceTree = "<group>";
+		};
+		765E2522204B9F8D00593ADE /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				765E2523204B9FA800593ADE /* DetailViewController.swift */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
+		765E2525204BAE8F00593ADE /* NewEventViewController */ = {
+			isa = PBXGroup;
+			children = (
+				765E2526204BAEBE00593ADE /* NewEventViewController.swift */,
+			);
+			path = NewEventViewController;
 			sourceTree = "<group>";
 		};
 		76980DAE203FC0D800451C3C /* Cells */ = {
@@ -381,15 +406,27 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MDB Socials/Pods-MDB Socials-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/HanekeSwift/Haneke.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Haneke.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -441,11 +478,14 @@
 				7637A213203DA32000F83555 /* MDB_Socials.xcdatamodeld in Sources */,
 				7637A20D203DA32000F83555 /* LoginViewController.swift in Sources */,
 				761BC90B203ECD19005A6A1B /* FeedViewController.swift in Sources */,
+				765E2524204B9FA800593ADE /* DetailViewController.swift in Sources */,
 				761BC909203ECCE4005A6A1B /* SignUpViewController.swift in Sources */,
 				761BC90E203ED1FC005A6A1B /* UserAuthHelper.swift in Sources */,
 				761BC911203ED794005A6A1B /* FirebaseAPIClient.swift in Sources */,
 				761BC915203ED967005A6A1B /* Event.swift in Sources */,
+				765E2521204B6AE500593ADE /* PhotoHandler.swift in Sources */,
 				7637A20B203DA32000F83555 /* AppDelegate.swift in Sources */,
+				765E2527204BAEBE00593ADE /* NewEventViewController.swift in Sources */,
 				761BC913203ED955005A6A1B /* Users.swift in Sources */,
 				76980DB0203FC10100451C3C /* FeedTableViewCell.swift in Sources */,
 			);

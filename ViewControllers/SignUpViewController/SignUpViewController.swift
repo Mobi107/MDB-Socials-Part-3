@@ -15,17 +15,17 @@ class SignUpViewController: UIViewController {
     var fullnameTextField: UITextField!
     var usernameTextField: UITextField!
     var signupButton: UIButton!
+    var profileImageView: UIImageView!
+    var choosePhotoLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavBar()
         setupTextFields()
         setupButton()
+        setupPhoto()
 
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setupNavBar()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,12 +39,41 @@ class SignUpViewController: UIViewController {
     
     func setupNavBar() {
         navigationItem.title = "Sign Up"
-        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 0.40, green: 0.70, blue: 1.0, alpha: 0.7)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!]
+    }
+    
+    func setupPhoto() {
+        profileImageView = UIImageView(frame: CGRect(x: 80, y: 90, width: view.frame.width - 160, height: 130))
+        profileImageView.layoutIfNeeded()
+        profileImageView.layer.borderWidth = 1.0
+        profileImageView.layer.borderColor = UIColor.black.cgColor
+        profileImageView.layer.masksToBounds = true
+        profileImageView.layer.cornerRadius = 5
+        view.addSubview(profileImageView)
+        
+        choosePhotoLabel = UILabel(frame: CGRect(x: 130, y: 250, width: view.frame.width - 250, height: 30))
+        choosePhotoLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
+        choosePhotoLabel.textColor = .black
+        choosePhotoLabel.textAlignment = .center
+        choosePhotoLabel.text = "Choose Photo"
+        choosePhotoLabel.sizeToFit()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(choosePhotoTapped))
+        choosePhotoLabel.isUserInteractionEnabled = true
+        choosePhotoLabel.addGestureRecognizer(tapGesture)
+        view.addSubview(choosePhotoLabel)
+    }
+    
+    @objc func choosePhotoTapped(sender: UITapGestureRecognizer) {
+        guard let a = (sender.view as? UILabel)?.text else { return }
+        PhotoHandler.shared.showActionSheet(vc: self)
+        PhotoHandler.shared.imagePickedBlock = { (image) in
+            /* get your image here */
+            self.profileImageView.image = image
+            self.profileImageView.contentMode = .scaleAspectFill
+        }
     }
     
     func setupTextFields() {
-        emailTextField = UITextField(frame: CGRect(x: 30, y: 100, width: view.frame.width - 60, height: 60))
+        emailTextField = UITextField(frame: CGRect(x: 30, y: 300, width: view.frame.width - 60, height: 40))
         emailTextField.adjustsFontSizeToFitWidth = true
         emailTextField.placeholder = "Email"
         emailTextField.layoutIfNeeded()
@@ -55,7 +84,7 @@ class SignUpViewController: UIViewController {
         emailTextField.textColor = UIColor.black
         view.addSubview(emailTextField)
         
-        passwordTextField = UITextField(frame: CGRect(x: 30, y: 430, width: view.frame.width - 60, height: 60))
+        passwordTextField = UITextField(frame: CGRect(x: 30, y: 510, width: view.frame.width - 60, height: 40))
         passwordTextField.adjustsFontSizeToFitWidth = true
         passwordTextField.placeholder = "Password"
         passwordTextField.layer.borderColor = UIColor.black.cgColor
@@ -66,7 +95,7 @@ class SignUpViewController: UIViewController {
         passwordTextField.isSecureTextEntry = true
         view.addSubview(passwordTextField)
         
-        fullnameTextField = UITextField(frame: CGRect(x: 30, y: 210, width: view.frame.width - 60, height: 60))
+        fullnameTextField = UITextField(frame: CGRect(x: 30, y: 370, width: view.frame.width - 60, height: 40))
         fullnameTextField.adjustsFontSizeToFitWidth = true
         fullnameTextField.placeholder = "Full Name"
         fullnameTextField.layoutIfNeeded()
@@ -77,7 +106,7 @@ class SignUpViewController: UIViewController {
         fullnameTextField.textColor = UIColor.black
         view.addSubview(fullnameTextField)
         
-        usernameTextField = UITextField(frame: CGRect(x: 30, y: 320, width: view.frame.width - 60, height: 60))
+        usernameTextField = UITextField(frame: CGRect(x: 30, y: 440, width: view.frame.width - 60, height: 40))
         usernameTextField.adjustsFontSizeToFitWidth = true
         usernameTextField.placeholder = "Username"
         usernameTextField.layoutIfNeeded()
@@ -90,7 +119,7 @@ class SignUpViewController: UIViewController {
     }
     
     func setupButton() {
-        signupButton = UIButton(frame: CGRect(x: 70, y: 540, width: view.frame.width - 140, height: 50))
+        signupButton = UIButton(frame: CGRect(x: 70, y: 580, width: view.frame.width - 140, height: 50))
         signupButton.backgroundColor = UIColor(displayP3Red: 0.20, green: 0.60, blue: 1.0, alpha: 1.0)
         signupButton.layoutIfNeeded()
         signupButton.setTitle("Sign Up", for: .normal)
@@ -121,13 +150,14 @@ class SignUpViewController: UIViewController {
                 }
             }))
         } else {
+            let profileImageData = UIImageJPEGRepresentation(profileImageView.image!, 0.9)
             let email = emailTextField.text!
             let password = passwordTextField.text!
             let fullname = fullnameTextField.text!
             let username = usernameTextField.text!
             
-            UserAuthHelper.createUser(email: email, password: password, withBlock: { (id) in
-                FirebaseAPIClient.createNewUser(id: id, fullname: fullname, email: email, username: username)
+            UserAuthHelper.createUser(email: email, password: password, imageData: profileImageData!, withBlock: { (imageURL, id) in
+                FirebaseAPIClient.createNewUser(id: id, fullname: fullname, email: email, username: username, imageURL: imageURL)
                 self.emailTextField.text = ""
                 self.passwordTextField.text = ""
                 self.fullnameTextField.text = ""
@@ -136,6 +166,8 @@ class SignUpViewController: UIViewController {
             })
         }
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

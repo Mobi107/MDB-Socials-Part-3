@@ -20,16 +20,13 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        view.backgroundColor = UIColor(displayP3Red: 0.40, green: 0.70, blue: 1.0, alpha: 1.0)
+        view.backgroundColor = UIColor(displayP3Red: 0.60, green: 0.80, blue: 1.0, alpha: 1.0)
+        setupNavBar()
         setupTextFields()
         setupButton()
         setupNotMemberLabel()
         setupSignUp()
         setupLogo()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        setupNavBar()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -43,8 +40,8 @@ class LoginViewController: UIViewController {
     
     func setupNavBar() {
         navigationItem.title = "MDB Socials"
-        navigationController?.navigationBar.barTintColor = UIColor.white
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor(displayP3Red: 0.40, green: 0.70, blue: 1.0, alpha: 0.7), NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!]
+        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 0.20, green: 0.60, blue: 1.0, alpha: 1.0)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!]
     }
     
     func setupTextFields() {

@@ -13,6 +13,7 @@ class FeedViewController: UIViewController {
     
     var eventTableView: UITableView!
     var events: [Event] = []
+    var event: Event!
     var auth = Auth.auth()
     var postsRef: DatabaseReference = Database.database().reference().child("Events")
     var storage: StorageReference = Storage.storage().reference()
@@ -21,6 +22,11 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityIndicator.startAnimating()
         setupTableView()
@@ -35,7 +41,6 @@ class FeedViewController: UIViewController {
             activityIndicator.stopAnimating()
             
         })
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,7 +60,16 @@ class FeedViewController: UIViewController {
     }
     
     func setupTableView() {
-        
+        eventTableView = UITableView(frame: view.frame)
+        eventTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "feedCell")
+        eventTableView.backgroundColor = UIColor.white
+        eventTableView.rowHeight = (view.frame.height / 2) - 32
+        eventTableView.showsVerticalScrollIndicator = true
+        eventTableView.bounces = true
+//        eventTableView.tag = 1
+        eventTableView.delegate = self
+        eventTableView.dataSource = self
+        view.addSubview(eventTableView)
     }
     
     @objc func logOut() {
@@ -67,7 +81,7 @@ class FeedViewController: UIViewController {
     }
     
     @objc func createEventTapped() {
-        
+        self.performSegue(withIdentifier: "toNewEventFromFeed", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,7 +107,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "event", for: indexPath) as! FeedTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedTableViewCell
         for subview in cell.contentView.subviews {
             subview.removeFromSuperview()
         }
@@ -104,7 +118,47 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let eventCell = cell as! FeedTableViewCell
         let event = events[indexPath.item]
+        Users.getCurrentUser(withId: event.creatorId!) { (user) in
+            eventCell.createrUserName.text = user.username
+            user.getProfilePic {
+                eventCell.createrImage.image = user.image
+            }
+        }
+        eventCell.eventTitle.text = event.title
+        event.getEventPic {
+            eventCell.eventImage.image = event.image
+        }
+        eventCell.date.text = event.date
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        event = events[indexPath.row]
+        CellTapped()
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func CellTapped() {
+        self.performSegue(withIdentifier: "toDetailFromFeed", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailFromFeed" {
+            let detail = segue.destination as! DetailViewController
+            detail.event = event
+        } else if segue.identifier == "toNewEventFromFeed" {
+            _ = segue.destination as! NewEventViewController
+//            newEvent.user = currentUser
+        }
+    }
 }
 
+extension FeedViewController: FeedTableViewCellDelegate {
+    
+    func tableButton(forCell: FeedTableViewCell) {
+        forCell.backgroundColor = UIColor.clear
+    }
+}
