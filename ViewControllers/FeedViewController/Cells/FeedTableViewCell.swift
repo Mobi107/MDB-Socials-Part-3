@@ -9,6 +9,7 @@
 import UIKit
 
 protocol FeedTableViewCellDelegate {
+    
     func tableButton(forCell: FeedTableViewCell)
 }
 
@@ -23,20 +24,17 @@ class FeedTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        eventImage = UIImageView(frame: CGRect(x: contentView.frame.minX + 10, y: contentView.frame.midY, width: contentView.frame.width - 20, height: contentView.frame.height / 2))
-        eventTitle = UILabel(frame: CGRect(x: contentView.frame.minX + 10, y: contentView.frame.midY - 25, width: contentView.frame.width / 2, height: 20))
+        eventImage = UIImageView(frame: CGRect(x: contentView.frame.minX + 10, y: contentView.frame.midY - 20, width: contentView.frame.width - 20, height: (contentView.frame.height / 2) - 10))
+        eventTitle = UILabel(frame: CGRect(x: contentView.frame.minX + 10, y: contentView.frame.minY + 70, width: contentView.frame.width / 2, height: 20))
         createrImage = UIImageView(frame: CGRect(x: contentView.frame.minX + 10, y: contentView.frame.minY + 10, width: 50, height: 50))
         createrUserName = UILabel(frame: CGRect(x: contentView.frame.minX + 70, y: contentView.frame.minY + 25, width: contentView.frame.width / 2, height: 20))
-        date = UILabel(frame: CGRect(x: contentView.frame.midX + 10, y: contentView.frame.midY - 10, width: contentView.frame.width / 2 - 10, height: 20))
+        date = UILabel(frame: CGRect(x: contentView.frame.midX - 30, y: contentView.frame.minY + 70, width: contentView.frame.width / 2 + 30, height: 20))
         eventTitle.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
         eventTitle.textColor = .black
-        eventTitle.sizeToFit()
         createrUserName.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
         createrUserName.textColor = .black
-        createrUserName.sizeToFit()
         date.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 18)
         date.textColor = .black
-        date.sizeToFit()
         eventImage.layoutIfNeeded()
         eventImage.layer.borderWidth = 1.0
         eventImage.layer.borderColor = UIColor.black.cgColor

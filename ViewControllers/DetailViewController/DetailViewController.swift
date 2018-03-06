@@ -23,8 +23,8 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         setupNavBar()
         setupPhotos()
-        setupLabels()
         setupData()
+        setupLabels()
 
         // Do any additional setup after loading the view.
     }
@@ -43,7 +43,7 @@ class DetailViewController: UIViewController {
         createrImage.contentMode = .scaleAspectFill
         view.addSubview(createrImage)
         
-        eventImage = UIImageView(frame: CGRect(x: 20, y: 370, width: view.frame.width - 40, height: 200))
+        eventImage = UIImageView(frame: CGRect(x: 20, y: 270, width: view.frame.width - 40, height: 200))
         eventImage.layoutIfNeeded()
         eventImage.layer.borderWidth = 1.0
         eventImage.layer.borderColor = UIColor.black.cgColor
@@ -54,51 +54,45 @@ class DetailViewController: UIViewController {
     }
     
     func setupLabels() {
-        createrUserName = UILabel(frame: CGRect(x: 105, y: 120, width: view.frame.width - 95, height: 30))
+        createrUserName = UILabel(frame: CGRect(x: 105, y: 110, width: view.frame.width - 95, height: 30))
         createrUserName.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
         createrUserName.textColor = .black
-        createrUserName.sizeToFit()
         view.addSubview(createrUserName)
         
-        eventTitle = UILabel(frame: CGRect(x: 20, y: 160, width: view.frame.width, height: 50))
+        eventTitle = UILabel(frame: CGRect(x: 20, y: 170, width: view.frame.width, height: 30))
         eventTitle.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 25)
         eventTitle.textColor = .black
-        eventTitle.sizeToFit()
-        eventTitle.text = event.title
+        eventTitle.text = event.title!
         view.addSubview(eventTitle)
         
-        date = UILabel(frame: CGRect(x: 20, y: 220, width: view.frame.width, height: 30))
+        date = UILabel(frame: CGRect(x: 20, y: 200, width: view.frame.width, height: 30))
         date.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
         date.textColor = .black
-        date.sizeToFit()
-        date.text = event.date
+        date.text = event.date!
         view.addSubview(date)
         
-        eventDescription = UILabel(frame: CGRect(x: 20, y: 260, width: view.frame.width - 40, height: 100))
+        eventDescription = UILabel(frame: CGRect(x: 20, y: 210, width: view.frame.width - 40, height: 60))
         eventDescription.textColor = .black
-        eventDescription.sizeToFit()
         eventDescription.clipsToBounds = true
-        eventDescription.text = event.description
+        eventDescription.text = event.description!
         view.addSubview(eventDescription)
         
-        location = UILabel(frame: CGRect(x: 20, y: 480, width: view.frame.width / 2, height: 30))
+        location = UILabel(frame: CGRect(x: 20, y: 500, width: view.frame.width / 2, height: 30))
         location.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 20)
         location.textColor = .black
-        location.sizeToFit()
         location.text = "Location"
         view.addSubview(location)
     }
     
     func setupData() {
-        Users.getCurrentUser(withId: event.creatorId!) { (user) in
-            self.createrUserName.text = user.username
-            user.getProfilePic {
-                self.createrImage.image = user.image
+        FirebaseAPIClient.fetchUser(id: event.creatorId!) { (user) in
+            self.createrUserName.text = user.username!
+            Utils.getImage(withUrl: user.imageURL!).then {image in
+                self.createrImage.image = image
             }
         }
-        eventTitle.text = event.title
-        event.getEventPic {
-            self.eventImage.image = self.event.image
+        Utils.getImage(withUrl: event.imageURL!).then {image in
+            self.eventImage.image = image
         }
     }
     

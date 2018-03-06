@@ -11,4 +11,5 @@ import ChameleonFramework
 
 struct Constants {
     static let appColor = UIColor(hexString: "#2B99E2")
+    static let dataURL = "https://mdb-socials-107.firebaseio.com/"
 }

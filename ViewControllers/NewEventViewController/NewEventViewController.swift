@@ -18,6 +18,8 @@ class NewEventViewController: UIViewController {
     var choosePhotoLabel: UILabel!
     var date: String!
     var user: Users!
+    var event: Event!
+    var vc = FeedViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +34,8 @@ class NewEventViewController: UIViewController {
         view.addSubview(datePicker)
         datePicker.frame = CGRect(x: 10, y: 480, width: self.view.frame.width, height: 100)
         
+        
         // Set some of UIDatePicker properties
-        datePicker.timeZone = NSTimeZone.local
         datePicker.backgroundColor = UIColor.white
         
         // Add an event to call onDidChangeDate function when value is changed.
@@ -169,6 +171,8 @@ class NewEventViewController: UIViewController {
             
             FirebaseAPIClient.createNewEvent(imageData: eventImageData!, withBlock: { (imageURL, id) in
                 FirebaseAPIClient.createEvent(id: id, title: title, creator: self.user.fullname!, creatorId: self.user.id!, description: description, date: self.date, imageURL: imageURL)
+                self.event = Event(id: id, postDict: ["title": title, "creator": self.user.fullname!, "creatorId": self.user.id!, "description": description, "date": self.date, "imageURL": imageURL])
+                self.vc.newEvent(event: self.event)
                 self.eventTitleTextField.text = ""
                 self.descriptionTextField.text = ""
                 self.navigationController?.popViewController(animated: true)

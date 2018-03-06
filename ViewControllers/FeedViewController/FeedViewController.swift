@@ -23,10 +23,6 @@ class FeedViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityIndicator.startAnimating()
         setupTableView()
@@ -41,6 +37,10 @@ class FeedViewController: UIViewController {
             activityIndicator.stopAnimating()
             
         })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        eventTableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -63,7 +63,7 @@ class FeedViewController: UIViewController {
         eventTableView = UITableView(frame: view.frame)
         eventTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "feedCell")
         eventTableView.backgroundColor = UIColor.white
-        eventTableView.rowHeight = (view.frame.height / 2) - 32
+        eventTableView.rowHeight = 250
         eventTableView.showsVerticalScrollIndicator = true
         eventTableView.bounces = true
 //        eventTableView.tag = 1
@@ -118,17 +118,17 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let eventCell = cell as! FeedTableViewCell
         let event = events[indexPath.item]
-        Users.getCurrentUser(withId: event.creatorId!) { (user) in
+        FirebaseAPIClient.fetchUser(id: event.creatorId!) { (user) in
             eventCell.createrUserName.text = user.username
-            user.getProfilePic {
-                eventCell.createrImage.image = user.image
+            Utils.getImage(withUrl: user.imageURL!).then {image in
+                eventCell.createrImage.image = image
             }
         }
         eventCell.eventTitle.text = event.title
-        event.getEventPic {
-            eventCell.eventImage.image = event.image
+        Utils.getImage(withUrl: event.imageURL!).then {image in
+            eventCell.eventImage.image = image
         }
-        eventCell.date.text = event.date
+        eventCell.date.text = event.date!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -160,5 +160,9 @@ extension FeedViewController: FeedTableViewCellDelegate {
     
     func tableButton(forCell: FeedTableViewCell) {
         forCell.backgroundColor = UIColor.clear
+    }
+    
+    func newEvent(event: Event) {
+        events.append(event)
     }
 }
