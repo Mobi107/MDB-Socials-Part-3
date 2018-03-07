@@ -24,6 +24,9 @@ class FeedTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        for subview in contentView.subviews {
+            subview.removeFromSuperview()
+        }
         eventImage = UIImageView(frame: CGRect(x: contentView.frame.minX + 10, y: contentView.frame.midY - 20, width: contentView.frame.width - 20, height: (contentView.frame.height / 2) - 10))
         eventTitle = UILabel(frame: CGRect(x: contentView.frame.minX + 10, y: contentView.frame.minY + 70, width: contentView.frame.width / 2, height: 20))
         createrImage = UIImageView(frame: CGRect(x: contentView.frame.minX + 10, y: contentView.frame.minY + 10, width: 50, height: 50))
