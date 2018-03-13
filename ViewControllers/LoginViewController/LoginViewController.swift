@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
     
@@ -22,11 +23,18 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         view.backgroundColor = UIColor(displayP3Red: 0.60, green: 0.80, blue: 1.0, alpha: 1.0)
         setupNavBar()
-        setupTextFields()
-        setupButton()
-        setupNotMemberLabel()
-        setupSignUp()
-        setupLogo()
+        setupUI()
+//        Auth.auth().addStateDidChangeListener { (auth, user) in
+//            if user != nil {
+//                DispatchQueue.main.async {
+//                    self.performSegue(withIdentifier: "toFeedFromLogin", sender: self)
+//                }
+//            } else {
+//                DispatchQueue.main.async {
+//                    self.setupUI()
+//                }
+//            }
+//        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -36,6 +44,14 @@ class LoginViewController: UIViewController {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func setupUI() {
+        setupTextFields()
+        setupButton()
+        setupNotMemberLabel()
+        setupSignUp()
+        setupLogo()
     }
     
     func setupNavBar() {

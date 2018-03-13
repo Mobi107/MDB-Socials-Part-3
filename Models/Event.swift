@@ -18,6 +18,7 @@ class Event {
     var creator: String?
     var imageURL: String?
     var id: String?
+    var interestedUserIds = [String]()
     var image: UIImage?
     
     
@@ -41,6 +42,9 @@ class Event {
             }
             if let imageURL = postDict!["imageURL"] as? String {
                 self.imageURL = imageURL
+            }
+            if let interestedUserIds = postDict!["interestedUserIds"] as? [String] {
+                self.interestedUserIds = interestedUserIds
             }
         }
     }

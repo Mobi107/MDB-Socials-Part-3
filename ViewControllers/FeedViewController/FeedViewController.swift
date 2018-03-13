@@ -25,13 +25,14 @@ class FeedViewController: UIViewController {
         // Do any additional setup after loading the view.
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityIndicator.startAnimating()
-        setupTableView()
         Users.getCurrentUser(withId: (Auth.auth().currentUser?.uid)!, block: {(cUser) in
             self.currentUser = cUser
         })
+        setupTableView()
         FirebaseAPIClient.fetchEvents(withBlock: { (events) in
             self.events.append(contentsOf: events)
             print("the contents of posts are now... \(self.events)")
+//            self.sortPosts()
             self.eventTableView.reloadData()
             
             activityIndicator.stopAnimating()
@@ -39,7 +40,18 @@ class FeedViewController: UIViewController {
         })
     }
     
+//    func sortPosts() {
+//        self.events.sort { (post1, post2) -> Bool in
+//            let dateFormatter: DateFormatter = DateFormatter()
+//            dateFormatter.dateFormat = "E, d MMM yyyy HH:mm"
+//            let date1 = dateFormatter.date(from: post1.date!)
+//            let date2 = dateFormatter.date(from: post2.date!)
+//            return date1! > date2!
+//        }
+//    }
+    
     override func viewWillAppear(_ animated: Bool) {
+//        sortPosts()
         eventTableView.reloadData()
     }
     
@@ -127,6 +139,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
             eventCell.eventImage.image = image
         }
         eventCell.date.text = event.date!
+        eventCell.interestedUserIds.text = "\(event.interestedUserIds.count) interested"
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

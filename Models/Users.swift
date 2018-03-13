@@ -16,6 +16,7 @@ class Users {
     var username: String?
     var imageURL: String?
     var id: String?
+    var interestedEventIds = [String]()
     var image: UIImage?
     
     init(id: String, userDict: [String:Any]?) {
@@ -32,6 +33,9 @@ class Users {
             }
             if let imageURL = userDict!["imageURL"] as? String {
                 self.imageURL = imageURL
+            }
+            if let interestedEventIds = userDict!["interestedEventIds"] as? [String] {
+                self.interestedEventIds = interestedEventIds
             }
         }
     }

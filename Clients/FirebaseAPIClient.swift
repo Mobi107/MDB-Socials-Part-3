@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import SwiftyJSON
 
 class FirebaseAPIClient {
     static func fetchEvents(withBlock: @escaping ([Event]) -> ()) {
@@ -53,5 +54,40 @@ class FirebaseAPIClient {
         let newUser = ["fullname": fullname, "email": email, "username": username, "imageURL": imageURL]
         let childUpdates = ["/\(id)/": newUser]
         usersRef.updateChildValues(childUpdates)
+    }
+    
+    static func favoriteEvent(event: Event, user: Users) {
+        let ref = Database.database().reference().child("Events/\(event.id!)")
+        ref.runTransactionBlock({ (currentData: MutableData) -> TransactionResult in
+            if var post = currentData.value as? [String : AnyObject], let uid = user.id {
+                var stars: [String]
+                stars = post["interestedUserIds"] as? [String] ?? []
+                if stars.contains(uid) {
+                    // Unstar the post and remove self from stars
+                    let i = stars.index(of: uid)
+                    stars.remove(at: i!)
+                } else {
+                    // Star the post and add self to stars
+                    stars.append(uid)
+                }
+                post["interestedUserIds"] = stars as AnyObject?
+                
+                // Set value and report transaction success
+                currentData.value = post
+                
+                return TransactionResult.success(withValue: currentData)
+            }
+            return TransactionResult.success(withValue: currentData)
+        }) { (error, committed, snapshot) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    static func favoriteUser(event: Event, user: Users) {
+        let userRef = Database.database().reference().child("Users/\(user.id!)/interestedEventIds")
+        userRef.setValue(user.interestedEventIds)
+
     }
 }

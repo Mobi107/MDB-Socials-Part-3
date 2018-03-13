@@ -127,7 +127,7 @@ class NewEventViewController: UIViewController {
         let dateFormatter: DateFormatter = DateFormatter()
         
         // Set date format
-        dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "E, d MMM yyyy HH:mm"
         
         // Apply date format
         date = dateFormatter.string(from: sender.date)
