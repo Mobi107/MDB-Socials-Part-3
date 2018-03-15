@@ -69,6 +69,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.5.2):
     - PromiseKit/CorePromise
+  - SwiftyBeaver (1.5.1)
   - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
@@ -82,6 +83,7 @@ DEPENDENCIES:
   - ObjectMapper
   - PromiseKit (~> 4.0)
   - PromiseKit/Alamofire
+  - SwiftyBeaver
   - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -116,8 +118,9 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PromiseKit: 743e497a5f505a470d3bbbf4ce0663c1268af0a4
+  SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: db07da86d82fc996b414e8a60ae493fc926fff03
+PODFILE CHECKSUM: bb9ec25cc4295e00f572aaa1882f7cbcdc874ff5
 
 COCOAPODS: 1.4.0
