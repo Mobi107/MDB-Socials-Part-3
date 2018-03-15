@@ -29,6 +29,10 @@
 		765E252A204BDBA800593ADE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765E2529204BDBA800593ADE /* Constants.swift */; };
 		765E252C204BDC2100593ADE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765E252B204BDC2100593ADE /* Utils.swift */; };
 		76980DB0203FC10100451C3C /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76980DAF203FC10100451C3C /* FeedTableViewCell.swift */; };
+		76C8224820588648000A477A /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8224720588648000A477A /* FavoritesViewController.swift */; };
+		76C8224A205887A4000A477A /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C82249205887A4000A477A /* TabBarController.swift */; };
+		76C8224D205A41D1000A477A /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8224C205A41D1000A477A /* FavoritesTableViewCell.swift */; };
+		76C8224F205A4F65000A477A /* RestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8224E205A4F65000A477A /* RestAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +80,10 @@
 		765E2529204BDBA800593ADE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		765E252B204BDC2100593ADE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		76980DAF203FC10100451C3C /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewCell.swift; sourceTree = "<group>"; };
+		76C8224720588648000A477A /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		76C82249205887A4000A477A /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		76C8224C205A41D1000A477A /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		76C8224E205A4F65000A477A /* RestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestAPI.swift; sourceTree = "<group>"; };
 		904EC9637FBF50E3342C344E /* Pods-MDB Socials.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB Socials.release.xcconfig"; path = "Pods/Target Support Files/Pods-MDB Socials/Pods-MDB Socials.release.xcconfig"; sourceTree = "<group>"; };
 		9ABD916910DF12D5F67DFC78 /* Pods_MDB_Socials.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MDB_Socials.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7839A3F01B113BCE8E2139E /* Pods-MDB Socials.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MDB Socials.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MDB Socials/Pods-MDB Socials.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +126,8 @@
 		761BC903203EBBD5005A6A1B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				76C822462058857C000A477A /* FavoritesViewController */,
+				76C8224520588525000A477A /* TabBarController */,
 				765E2525204BAE8F00593ADE /* NewEventViewController */,
 				765E2522204B9F8D00593ADE /* DetailViewController */,
 				761BC907203EBC2C005A6A1B /* LoginViewController */,
@@ -174,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				761BC910203ED794005A6A1B /* FirebaseAPIClient.swift */,
+				76C8224E205A4F65000A477A /* RestAPI.swift */,
 			);
 			path = Clients;
 			sourceTree = "<group>";
@@ -266,6 +277,31 @@
 			isa = PBXGroup;
 			children = (
 				76980DAF203FC10100451C3C /* FeedTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		76C8224520588525000A477A /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				76C82249205887A4000A477A /* TabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		76C822462058857C000A477A /* FavoritesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				76C8224B205A4149000A477A /* Cells */,
+				76C8224720588648000A477A /* FavoritesViewController.swift */,
+			);
+			path = FavoritesViewController;
+			sourceTree = "<group>";
+		};
+		76C8224B205A4149000A477A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				76C8224C205A41D1000A477A /* FavoritesTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -490,15 +526,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7637A213203DA32000F83555 /* MDB_Socials.xcdatamodeld in Sources */,
+				76C8224D205A41D1000A477A /* FavoritesTableViewCell.swift in Sources */,
 				7637A20D203DA32000F83555 /* LoginViewController.swift in Sources */,
 				761BC90B203ECD19005A6A1B /* FeedViewController.swift in Sources */,
 				765E2524204B9FA800593ADE /* DetailViewController.swift in Sources */,
 				761BC909203ECCE4005A6A1B /* SignUpViewController.swift in Sources */,
 				765E252C204BDC2100593ADE /* Utils.swift in Sources */,
+				76C8224A205887A4000A477A /* TabBarController.swift in Sources */,
 				761BC90E203ED1FC005A6A1B /* UserAuthHelper.swift in Sources */,
 				761BC911203ED794005A6A1B /* FirebaseAPIClient.swift in Sources */,
 				761BC915203ED967005A6A1B /* Event.swift in Sources */,
 				765E2521204B6AE500593ADE /* PhotoHandler.swift in Sources */,
+				76C8224820588648000A477A /* FavoritesViewController.swift in Sources */,
+				76C8224F205A4F65000A477A /* RestAPI.swift in Sources */,
 				7637A20B203DA32000F83555 /* AppDelegate.swift in Sources */,
 				765E2527204BAEBE00593ADE /* NewEventViewController.swift in Sources */,
 				765E252A204BDBA800593ADE /* Constants.swift in Sources */,

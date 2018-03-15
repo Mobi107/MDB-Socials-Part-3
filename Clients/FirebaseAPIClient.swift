@@ -20,6 +20,24 @@ class FirebaseAPIClient {
         })
     }
     
+    static func fetchFavorites(ids: [String], completion: @escaping ([Event]) -> Void) {
+        //TODO: Implement a method to fetch posts with Firebase!
+        let group = DispatchGroup()
+        var events = [Event]()
+        for id in ids {
+            group.enter()
+            let ref = Database.database().reference()
+            ref.child("Events").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
+                let event = Event(id: snapshot.key, postDict: snapshot.value as! [String : Any]?)
+                events.append(event)
+                group.leave()
+            })
+        }
+        group.notify(queue: DispatchQueue.main, execute: {
+            completion(events)
+        })
+    }
+    
     static func fetchUser(id: String, withBlock: @escaping (Users) -> ()) {
         //TODO: Implement a method to fetch posts with Firebase!
         let ref = Database.database().reference()

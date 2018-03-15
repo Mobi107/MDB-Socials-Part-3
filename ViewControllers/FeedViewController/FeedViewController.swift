@@ -21,8 +21,10 @@ class FeedViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.setHidesBackButton(true, animated: true)
+//        self.navigationController?.isNavigationBarHidden = false
+//        self.navigationItem.setHidesBackButton(true, animated: true)
         // Do any additional setup after loading the view.
+        self.title = "Feed"
         let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityIndicator.startAnimating()
         Users.getCurrentUser(withId: (Auth.auth().currentUser?.uid)!, block: {(cUser) in
@@ -55,21 +57,21 @@ class FeedViewController: UIViewController {
         eventTableView.reloadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        setupNavBar()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        setupNavBar()
+//    }
     
-    func setupNavBar() {
-        navigationItem.title = "Feed"
-        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 0.40, green: 0.70, blue: 1.0, alpha: 0.7)
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!]
-        let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOut))
-        navigationItem.leftBarButtonItem = logoutButton
-        navigationItem.leftBarButtonItem?.tintColor = .white
-        let addEventButton = UIBarButtonItem(title: "Create Event", style: .plain, target: self, action: #selector(createEventTapped))
-        navigationItem.rightBarButtonItem = addEventButton
-        navigationItem.rightBarButtonItem?.tintColor = .white
-    }
+//    func setupNavBar() {
+//        navigationItem.title = "Feed"
+//        navigationController?.navigationBar.barTintColor = UIColor(displayP3Red: 0.40, green: 0.70, blue: 1.0, alpha: 0.7)
+//        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont(name: "AmericanTypewriter-Bold", size: 20)!]
+//        let logoutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOut))
+//        navigationItem.leftBarButtonItem = logoutButton
+//        navigationItem.leftBarButtonItem?.tintColor = .white
+//        let addEventButton = UIBarButtonItem(title: "Create Event", style: .plain, target: self, action: #selector(createEventTapped))
+//        navigationItem.rightBarButtonItem = addEventButton
+//        navigationItem.rightBarButtonItem?.tintColor = .white
+//    }
     
     func setupTableView() {
         eventTableView = UITableView(frame: view.frame)
@@ -82,18 +84,6 @@ class FeedViewController: UIViewController {
         eventTableView.delegate = self
         eventTableView.dataSource = self
         view.addSubview(eventTableView)
-    }
-    
-    @objc func logOut() {
-        print("this thing was clicked on")
-        UserAuthHelper.logOut {
-            print("logged out")
-            self.navigationController?.popViewController(animated: true)
-        }
-    }
-    
-    @objc func createEventTapped() {
-        self.performSegue(withIdentifier: "toNewEventFromFeed", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -157,17 +147,11 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func CellTapped() {
-        self.performSegue(withIdentifier: "toDetailFromFeed", sender: self)
+        self.tabBarController?.performSegue(withIdentifier: "toDetailFromFeed", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetailFromFeed" {
-            let detail = segue.destination as! DetailViewController
-            detail.event = event
-        } else if segue.identifier == "toNewEventFromFeed" {
-            _ = segue.destination as! NewEventViewController
-//            newEvent.user = currentUser
-        }
+        
     }
 }
 
