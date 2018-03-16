@@ -67,8 +67,13 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailFromFeed" {
             let detail = segue.destination as! DetailViewController
-            let currentVC = self.viewControllers![0] as! FeedViewController
-            detail.event = currentVC.event
+            if segue.source is FeedViewController {
+                let currentVC = self.viewControllers![0] as! FeedViewController
+                detail.event = currentVC.event
+            } else {
+                let currentVC = self.viewControllers![1] as! FavoritesViewController
+                detail.event = currentVC.event
+            }
         } else if segue.identifier == "toNewEventFromFeed" {
             _ = segue.destination as! NewEventViewController
             //            newEvent.user = currentUser

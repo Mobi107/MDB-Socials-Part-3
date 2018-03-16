@@ -56,7 +56,7 @@ class FavoritesViewController: UIViewController {
     
     func setupTableView() {
         favoritesTableView = UITableView(frame: view.frame)
-        favoritesTableView.register(FeedTableViewCell.self, forCellReuseIdentifier: "favCell")
+        favoritesTableView.register(FavoritesTableViewCell.self, forCellReuseIdentifier: "favCell")
         favoritesTableView.backgroundColor = UIColor.white
         favoritesTableView.rowHeight = 250
         favoritesTableView.showsVerticalScrollIndicator = true
